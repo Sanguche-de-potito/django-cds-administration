@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 app_name = "album"
 
 urlpatterns = [
-    path("list/", login_required(AlbumList.as_view()), name="album_list"),
+    path("", login_required(AlbumList.as_view()), name="album_list"),
     path("create/", login_required(AlbumCreate.as_view()), name="album_create"),
     path(
         "editar/<int:pk>/", login_required(AlbumUpdate.as_view()), name="album_update"
