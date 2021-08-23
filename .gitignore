@@ -1,0 +1,7 @@
+Djcds/settings.py
+Djcds/__pycache__
+manage.py
+album/__pycache__
+album/migrations
+maintenance/__pycache__
+maintenance/migrations

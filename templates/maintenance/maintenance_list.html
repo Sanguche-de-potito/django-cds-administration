@@ -1,0 +1,27 @@
+{% extends 'base/layout.html' %}
+
+{% block title %}
+<title>Mantencion</title>
+{% endblock %}
+{% block head %}
+<h1>Mantencion</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <button class="btn btn-primary" id="artista">Artistas</button>
+    <button class="btn btn-primary" id="genero">Generos</button>
+    <button class="btn btn-primary" id="sello">Sellos</button>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+            </tr>
+        </thead>
+        <tbody id="res">
+
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

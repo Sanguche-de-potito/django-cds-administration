@@ -1,0 +1,18 @@
+{% extends 'base/layout.html' %}
+
+{% block title %}
+<title>Sello nuevo</title>
+{% endblock %}
+{% block head %}
+<h1>Agregar/editar Sello</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-primary form-control" type='submit'>guardar</button>
+    </form>
+</div>
+{% endblock %}

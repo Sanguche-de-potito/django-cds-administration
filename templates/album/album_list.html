@@ -1,0 +1,55 @@
+{% extends 'base/layout.html' %}
+{% block title %}
+<title>Albums</title>
+{% endblock %}
+
+{% block head %}
+<h1>Mis cds</h1>
+{% endblock %}
+{% block content %}
+<div class="container">
+    <table class='table table-bordered'>
+        <thead>
+            <tr>
+                <td>Artista</td>
+                <td>Album</td>
+                <td>Año</td>
+                <td>Sello</td>
+                <td>Genero</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% if object_list %}
+            {% for album in object_list %}
+
+            <tr>
+                <td>{{ album.artista.nombre }}</td>
+                <td>{{ album.nombre }}</td>
+                <td>{{ album.año }}</td>
+                <td>{{ album.sello.nombre }}</td>
+                <td>{{ album.genero.nombre }}</td>
+
+                <td>
+                    <a class="btn btn-primary" href="{% url 'album:album_update' album.id %}">editar</a>
+                    <a class="btn btn-danger" href="{% url 'album:album_delete' album.id %}">eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+
+            {% else %}
+            <h1> No hay Albums </h1>
+            {% endif %}
+        </tbody>
+    </table>
+        <ul class="pager">
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number  }}">Previous</a>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number  }}">Next</a>
+            {% endif %}
+        </ul>
+
+</div>
+
+{% endblock %}

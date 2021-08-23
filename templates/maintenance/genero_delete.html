@@ -1,0 +1,21 @@
+{% extends 'base/layout.html' %}
+
+{% block title %}
+    <title>
+        Eliminar Genero
+    </title>
+{% endblock %}
+
+{% block head %}
+    <h1>Eliminar Genero</h1>
+{% endblock %}
+{% block content %}
+    <div class='container'>
+        <form method="post">
+            {% csrf_token %}
+            <h3>¿desea eliminar el registro de {{ object.nombre }}?</h3>
+            <button class="btn btn-danger" type='submit'>si, eliminar</button>
+            <a class="btn btn-default"  href="{% url 'maintenance:maintenance_index' %}">cancelar</a>
+        </form>
+    </div>
+{% endblock %}
