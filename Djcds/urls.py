@@ -28,7 +28,7 @@ from django.contrib.auth.decorators import login_required
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("album/", include(("album.urls"), namespace="album")),
+    path("", include(("album.urls"), namespace="album")),
     path("maintenance/", include(("maintenance.urls"), namespace="maintenance")),
     path(
         "accounts/login/", LoginView.as_view(template_name="login.html"), name="login"
